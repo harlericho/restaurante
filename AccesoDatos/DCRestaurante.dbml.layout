@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DCRestaurante">
+  <DataContextMoniker Name="/DCRestauranteDataContext" />
+  <nestedChildShapes>
+    <classShape Id="98f0c516-5927-4f9d-9f0c-05955fcb42ce" absoluteBounds="0.75, 5.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DCRestauranteDataContext/carta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58effc20-eca6-46ef-9b74-5946b7e73241" absoluteBounds="0.765, 5.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="587762fa-d074-49b1-b637-a35d2372c177" absoluteBounds="3.5, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DCRestauranteDataContext/usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a079211d-1142-45d3-be16-86462e7f6d83" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6cf0da1e-7726-42da-b86b-3a26f7111580" absoluteBounds="3.5, 5, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DCRestauranteDataContext/plato" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8903a56a-600f-4954-9c61-96fc2c3cb683" absoluteBounds="3.515, 5.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e9857f0-7b67-442f-8c49-bc0645d1acd4" absoluteBounds="0.75, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DCRestauranteDataContext/rol" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7fcf293-2f7a-46e6-9410-97e4a9eccad6" absoluteBounds="0.765, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 6.16429768880208); (3.5 : 6.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCRestauranteDataContext/carta/carta_plato" />
+      <nodes>
+        <classShapeMoniker Id="98f0c516-5927-4f9d-9f0c-05955fcb42ce" />
+        <classShapeMoniker Id="6cf0da1e-7726-42da-b86b-3a26f7111580" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.03929768880208); (3.5 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCRestauranteDataContext/rol/rol_usuario" />
+      <nodes>
+        <classShapeMoniker Id="3e9857f0-7b67-442f-8c49-bc0645d1acd4" />
+        <classShapeMoniker Id="587762fa-d074-49b1-b637-a35d2372c177" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

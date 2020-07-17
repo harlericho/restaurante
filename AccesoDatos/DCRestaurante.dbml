@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDDRESTAURANTE" Class="DCRestauranteDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=CHARLIE\SQLEXPRESS;Initial Catalog=BDDRESTAURANTE;Integrated Security=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="BDDRESTAURANTEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.carta" Member="cartas">
+    <Type Name="carta">
+      <Column Name="id_carta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion_carta" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_carta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado_carta" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="carta_plato" Member="platos" ThisKey="id_carta" OtherKey="id_carta" Type="plato" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usuario" Member="usuarios">
+    <Type Name="usuario">
+      <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_usuario" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="email_usuario" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="pass_usuario" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_usuario" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado_usuario" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="id_rol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="rol_usuario" Member="rol" ThisKey="id_rol" OtherKey="id_rol" Type="rol" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.plato" Member="platos">
+    <Type Name="plato">
+      <Column Name="id_plato" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_plato" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_plato" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_plato" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="imagen_plato" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_plato" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado_plato" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="id_carta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="carta_plato" Member="carta" ThisKey="id_carta" OtherKey="id_carta" Type="carta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rol" Member="rols">
+    <Type Name="rol">
+      <Column Name="id_rol" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion_rol" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_rol" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado_rol" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="rol_usuario" Member="usuarios" ThisKey="id_rol" OtherKey="id_rol" Type="usuario" />
+    </Type>
+  </Table>
+</Database>
