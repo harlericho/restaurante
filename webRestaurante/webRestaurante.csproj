@@ -67,12 +67,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icons\clients.ico" />
+    <Content Include="Icons\login.ico" />
     <Content Include="Icons\logo.ico" />
     <Content Include="Icons\menu.ico" />
     <Content Include="Icons\plato.ico" />
     <Content Include="Icons\restaurante.ico" />
+    <Content Include="Icons\users.ico" />
+    <Content Include="Images\order now.png" />
+    <Content Include="Images\preview-icon.png" />
     <Content Include="Web.config" />
+    <Content Include="wfmCarta.aspx" />
     <Content Include="wfmInicio.aspx" />
+    <Content Include="wfmLogin.aspx" />
+    <Content Include="wfmPlato.aspx" />
+    <Content Include="wfmRegistro.aspx" />
+    <Content Include="wfmClientes.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,12 +93,47 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="wfmCarta.aspx.cs">
+      <DependentUpon>wfmCarta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfmCarta.aspx.designer.cs">
+      <DependentUpon>wfmCarta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="wfmInicio.aspx.cs">
       <DependentUpon>wfmInicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="wfmInicio.aspx.designer.cs">
       <DependentUpon>wfmInicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfmLogin.aspx.cs">
+      <DependentUpon>wfmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfmLogin.aspx.designer.cs">
+      <DependentUpon>wfmLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfmPlato.aspx.cs">
+      <DependentUpon>wfmPlato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfmPlato.aspx.designer.cs">
+      <DependentUpon>wfmPlato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfmRegistro.aspx.cs">
+      <DependentUpon>wfmRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfmRegistro.aspx.designer.cs">
+      <DependentUpon>wfmRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfmClientes.aspx.cs">
+      <DependentUpon>wfmClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfmClientes.aspx.designer.cs">
+      <DependentUpon>wfmClientes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +155,9 @@
       <Project>{5a238cfd-483c-43c9-87e4-1ec593d9eff1}</Project>
       <Name>LogicaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Platos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

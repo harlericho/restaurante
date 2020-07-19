@@ -36,6 +36,9 @@ namespace AccesoDatos
     partial void Insertusuario(usuario instance);
     partial void Updateusuario(usuario instance);
     partial void Deleteusuario(usuario instance);
+    partial void Insertcliente(cliente instance);
+    partial void Updatecliente(cliente instance);
+    partial void Deletecliente(cliente instance);
     partial void Insertplato(plato instance);
     partial void Updateplato(plato instance);
     partial void Deleteplato(plato instance);
@@ -87,6 +90,14 @@ namespace AccesoDatos
 			get
 			{
 				return this.GetTable<usuario>();
+			}
+		}
+		
+		public System.Data.Linq.Table<cliente> clientes
+		{
+			get
+			{
+				return this.GetTable<cliente>();
 			}
 		}
 		
@@ -491,6 +502,236 @@ namespace AccesoDatos
 						this._id_rol = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("rol");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.cliente")]
+	public partial class cliente : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_cliente;
+		
+		private string _nombres_cliente;
+		
+		private string _dni_cliente;
+		
+		private string _direccion_cliente;
+		
+		private string _ttelefono_cliente;
+		
+		private string _email_cliente;
+		
+		private System.DateTime _fecha_cliente;
+		
+		private char _estado_cliente;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_clienteChanging(int value);
+    partial void Onid_clienteChanged();
+    partial void Onnombres_clienteChanging(string value);
+    partial void Onnombres_clienteChanged();
+    partial void Ondni_clienteChanging(string value);
+    partial void Ondni_clienteChanged();
+    partial void Ondireccion_clienteChanging(string value);
+    partial void Ondireccion_clienteChanged();
+    partial void Onttelefono_clienteChanging(string value);
+    partial void Onttelefono_clienteChanged();
+    partial void Onemail_clienteChanging(string value);
+    partial void Onemail_clienteChanged();
+    partial void Onfecha_clienteChanging(System.DateTime value);
+    partial void Onfecha_clienteChanged();
+    partial void Onestado_clienteChanging(char value);
+    partial void Onestado_clienteChanged();
+    #endregion
+		
+		public cliente()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cliente", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_cliente
+		{
+			get
+			{
+				return this._id_cliente;
+			}
+			set
+			{
+				if ((this._id_cliente != value))
+				{
+					this.Onid_clienteChanging(value);
+					this.SendPropertyChanging();
+					this._id_cliente = value;
+					this.SendPropertyChanged("id_cliente");
+					this.Onid_clienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombres_cliente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string nombres_cliente
+		{
+			get
+			{
+				return this._nombres_cliente;
+			}
+			set
+			{
+				if ((this._nombres_cliente != value))
+				{
+					this.Onnombres_clienteChanging(value);
+					this.SendPropertyChanging();
+					this._nombres_cliente = value;
+					this.SendPropertyChanged("nombres_cliente");
+					this.Onnombres_clienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dni_cliente", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string dni_cliente
+		{
+			get
+			{
+				return this._dni_cliente;
+			}
+			set
+			{
+				if ((this._dni_cliente != value))
+				{
+					this.Ondni_clienteChanging(value);
+					this.SendPropertyChanging();
+					this._dni_cliente = value;
+					this.SendPropertyChanged("dni_cliente");
+					this.Ondni_clienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_cliente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string direccion_cliente
+		{
+			get
+			{
+				return this._direccion_cliente;
+			}
+			set
+			{
+				if ((this._direccion_cliente != value))
+				{
+					this.Ondireccion_clienteChanging(value);
+					this.SendPropertyChanging();
+					this._direccion_cliente = value;
+					this.SendPropertyChanged("direccion_cliente");
+					this.Ondireccion_clienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ttelefono_cliente", DbType="VarChar(10)")]
+		public string ttelefono_cliente
+		{
+			get
+			{
+				return this._ttelefono_cliente;
+			}
+			set
+			{
+				if ((this._ttelefono_cliente != value))
+				{
+					this.Onttelefono_clienteChanging(value);
+					this.SendPropertyChanging();
+					this._ttelefono_cliente = value;
+					this.SendPropertyChanged("ttelefono_cliente");
+					this.Onttelefono_clienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_cliente", DbType="VarChar(100)")]
+		public string email_cliente
+		{
+			get
+			{
+				return this._email_cliente;
+			}
+			set
+			{
+				if ((this._email_cliente != value))
+				{
+					this.Onemail_clienteChanging(value);
+					this.SendPropertyChanging();
+					this._email_cliente = value;
+					this.SendPropertyChanged("email_cliente");
+					this.Onemail_clienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_cliente", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha_cliente
+		{
+			get
+			{
+				return this._fecha_cliente;
+			}
+			set
+			{
+				if ((this._fecha_cliente != value))
+				{
+					this.Onfecha_clienteChanging(value);
+					this.SendPropertyChanging();
+					this._fecha_cliente = value;
+					this.SendPropertyChanged("fecha_cliente");
+					this.Onfecha_clienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado_cliente", DbType="Char(1) NOT NULL")]
+		public char estado_cliente
+		{
+			get
+			{
+				return this._estado_cliente;
+			}
+			set
+			{
+				if ((this._estado_cliente != value))
+				{
+					this.Onestado_clienteChanging(value);
+					this.SendPropertyChanging();
+					this._estado_cliente = value;
+					this.SendPropertyChanged("estado_cliente");
+					this.Onestado_clienteChanged();
 				}
 			}
 		}

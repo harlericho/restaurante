@@ -21,6 +21,18 @@
       <Association Name="rol_usuario" Member="rol" ThisKey="id_rol" OtherKey="id_rol" Type="rol" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.cliente" Member="clientes">
+    <Type Name="cliente">
+      <Column Name="id_cliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombres_cliente" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dni_cliente" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion_cliente" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ttelefono_cliente" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="email_cliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fecha_cliente" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado_cliente" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.plato" Member="platos">
     <Type Name="plato">
       <Column Name="id_plato" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
